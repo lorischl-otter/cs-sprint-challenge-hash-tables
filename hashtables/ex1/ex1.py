@@ -33,3 +33,7 @@ def get_indices_of_item_weights(weights, length, limit):
 # This passes the current tests, but would likely not pass
 # in the event of duplicate weights but a limit that only
 # requests one of the weights
+
+# Perhaps should initialize each value as an empty list,
+# then simply append the value each time added
+# Then when outputting, index the list for the correct values
