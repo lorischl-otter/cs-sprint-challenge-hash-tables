@@ -1,9 +1,9 @@
-# Your code here
-
-
 def finder(files, queries):
     """
-    YOUR CODE HERE
+    Takes input of filepaths and filename queries
+    Outputs full filepaths of any filepath matching given query.
+
+    Overall runtime is O(n).
     """
     # Create empty dictionary
     d = {}
@@ -13,16 +13,19 @@ def finder(files, queries):
     for f in files:  # O(n) over files
         # Use "/" as split to get filename
         filename = f.split("/")[-1]
-        d[filename] = f
+        # If filename not yet in d, initialize empty list
+        if filename not in d:
+            d[filename] = []
+        d[filename].append(f)
 
     # Generate empty list for results
     results = []
 
     # Iterate over queries to see which are present in dict
-    for q in queries:
-        # If query in dict, append filepath to results
+    for q in queries:  # O(n) over queries
+        # If query in dict, add filepath(s) to results
         if q in d:
-            results.append(d[q])
+            results.extend(d[q])
 
     return results
 
