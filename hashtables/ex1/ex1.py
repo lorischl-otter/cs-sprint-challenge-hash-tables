@@ -5,6 +5,8 @@ def get_indices_of_item_weights(weights, length, limit):
     in reverse order.
 
     Returns None if no two are found.
+
+    Overall runtime is approximately O(2n)
     """
     # Create a blank dictionary
     d = {}
