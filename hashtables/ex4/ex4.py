@@ -1,8 +1,27 @@
 def has_negatives(a):
     """
-    YOUR CODE HERE
+    Takes a list `a`
+    Returns all positive values from list which
+    also had corresponding negative numbers in the list.
+
+    Overall runtime around O(2n) or O(n) over length a
     """
-    # Your code here
+    # Create empty dict
+    d = {}
+
+    # Add values of a to dict
+    for x in a:  # O(n) over a
+        d[x] = True
+
+    # Create result as empty list
+    result = []
+
+    # Look for negative values in dict
+    for x in a:  # O(n) over a
+        # if x is positive, and -x in dict
+        # add to results
+        if x > 0 and -x in d:
+            result.append(x)
 
     return result
 
